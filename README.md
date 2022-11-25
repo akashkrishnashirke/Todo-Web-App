@@ -2,6 +2,9 @@
 this is simple Todo web applications
 
 ## Features of this project:
+# Admin can
+
+update data
 
 # Anyone can
 
