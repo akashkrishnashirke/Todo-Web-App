@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block header %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock %} {% block content %}
+<body>
+<div class="container" align="center">
+
+
+
+  <form method="post">
+    <p>
+    <label for="id_username">Username:</label>
+    <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+
+
+  </p>
+
+<br>
+  <p>
+    <label for="id_password">Password:</label>
+    <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="password" name="password" autocomplete="current-password" required="" id="id_password">
+
+
+
+
+  </p>
+    <input type="hidden" name="csrfmiddlewaretoken" value="292enNlIF82GGDSS1RzJSiGyzZgnmwXVhBscKYKsM6GNGBsqK72GkzleEMvMe62U">
+    <button class="text-white hover:shadow-md text-xl rounded bg-green-500 px-4 py-2 mt-8 " type="submit">Login</button>
+        <br><hr>
+      {% csrf_token %}
+  </form>
+  <br>
+ <a  href="signup/" class="text-white hover:shadow-md text-xl rounded bg-green-500 px-4 py-2 mt-8 ">Sign Up</a>
+
+</div>
+</body>
+{% endblock %}
+</html>

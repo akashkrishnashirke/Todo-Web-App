@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block header %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock %} {% block content %}
+<body>
+<div align="center">
+<a class="font-bold text-white-500 text-xl sm:text-3xl"
+      >Update Data</a>
+<br>
+<br>
+
+    <form method="post" novalidate>
+  {%csrf_token%}
+  Title: <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="eno" value="{{form.title}}">
+    <p></p>
+        <br>
+  Descreptions: <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="ename" value="{{form.description}}">
+    <p></p>
+        <br>
+
+
+ Status: <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="ename" value="{{form.status}}">
+
+
+
+
+        <p></p>
+        <br>
+  Created date: <input
+            type="text" name="eadd" value="{{form.date_created}}">
+    <p></p>
+
+  <button class="text-white hover:shadow-md text-xl rounded bg-green-500 px-4 py-2 mt-8 " type="submit">Submit</button>
+        <br><hr>
+     {% csrf_token %}
+</form>
+
+    </form>
+</div>
+</body>
+{% endblock %}
+</html>

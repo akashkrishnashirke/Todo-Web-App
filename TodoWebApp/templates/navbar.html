@@ -1,0 +1,46 @@
+<nav
+  class="container md:mx-auto max-w-5xl p-2 border-b-2 border-pink-500 sm:place-items-center flex flex-col sm:flex-row justify-between"
+>
+  <div class="justify-between sm:justify-start w-full flex">
+    <a class="font-bold text-white-500 text-xl sm:text-3xl" href="/"
+      >Todo Web Applications</a
+    >
+
+  </div>
+
+  <ul
+    id="menu"
+    class="w-full pr-2 lg:pr-4 xl:pr-0 lg:w-2/3 justify-end items-end sm:items-center flex flex-col sm:flex-row space-x-4 text-blue-500 text-xl"
+  >
+    {% if user.is_anonymous %}
+    <li><a class="font-bold text-white-500 text-xl sm:text-2xl" href="/">Home</a></li>
+<!--    <li><a class="hover:underline" href="/accounts/login">Login</a></li>-->
+    <li><a class="hover:underline" href="/signup/">SignUp</a></li>
+    <li><a class="hover:underline" href="/all_tasks/">List of Tasks</a></li>
+<!--    <li><a class="hover:underline" href="/add_task/">Add Task</a></li>-->
+    <li><a class="hover:underline" href="/PendingStatus/">Pending Task</a></li>
+    <li><a class="hover:underline" href="/CompleteStatus/">Completed Task</a></li>
+    <li><a class="hover:underline" href="/logout/">Logout</a></li>
+    {% elif user.is_superuser %}
+   <li><a class="font-bold text-white-500 text-xl sm:text-2xl" href="/">Home</a></li>
+<!--    <li><a class="hover:underline" href="/accounts/login">Login</a></li>-->
+    <li><a class="hover:underline" href="/signup/">SignUp</a></li>
+      <li><a class="hover:underline" href="/all_tasks/">List of Tasks</a></li>
+<!--    <li><a class="hover:underline" href="/add_task/">Add Task</a></li>-->
+      <li><a class="hover:underline" href="/PendingStatus/">Pending Task</a></li>
+      <li><a class="hover:underline" href="/CompleteStatus/">Completed Task</a></li>
+<!--    <li><a class="hover:underline" href="/admin/">Admin Panel</a></li>-->
+      <li><a class="hover:underline" href="/logout/">Logout</a></li>
+    {% else %}
+   <li><a class="font-bold text-white-500 text-xl sm:text-2xl" href="/">Home</a></li>
+<!--    <li><a class="hover:underline" href="/accounts/login">Login</a></li>-->
+    <li><a class="hover:underline" href="/signup/">SignUp</a></li>
+      <li><a class="hover:underline" href="/all_tasks/">List of Task</a></li>
+<!--      <li><a class="hover:underline" href="/add_task/">Add Task</a></li>-->
+      <li><a class="hover:underline" href="/PendingStatus/">Pending Task</a></li>
+      <li><a class="hover:underline" href="/CompleteStatus/">Completed Task</a></li>
+      <li><a class="hover:underline" href="/logout/">Logout</a></li>
+    {% endif %}
+  </ul>
+</nav>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block header %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% endblock %} {% block content %}
+<body>
+<div align="center">
+<a class="font-bold text-white-500 text-xl sm:text-3xl"
+      >Add Tasks</a>
+<br>
+<br>
+
+
+ <form method="post">
+    <p>
+    <label class="font-bold text-white-500 text-xl sm:text-2xl" for="id_title">Title:</label>
+    <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="title" value="" maxlength="100" required="" id="id_title">
+
+
+  </p>
+
+<br>
+  <p>
+    <label class="font-bold text-white-500 text-xl sm:text-2xl" for="id_description">Description:</label>
+    <textarea class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            name="description" cols="40" rows="10" id="id_description" style="height: 90px;"></textarea>
+
+
+  </p>
+
+<br>
+  <p>
+    <label class="font-bold text-white-500 text-xl sm:text-2xl" for="id_status">Status:</label>
+    <select class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            name="status" required="" id="id_status">
+  <option value="" selected="">---------</option>
+
+  <option value="complete">complete</option>
+
+  <option value="pending">pending</option>
+
+</select>
+
+
+  </p>
+
+<br>
+  <p>
+    <label class="font-bold text-white-500 text-xl sm:text-2xl" for="id_date_created">Date created:</label>
+    <input class="w-full sm:w-2/3 px-2 py-1 bg-transparent border-black border-2 mt-4 sm:mt-0 sm:ml-10 rounded text-black"
+            type="text" name="date_created" value="2022-11-24 14:14:59" id="id_date_created"><input type="hidden" name="initial-date_created" value="2022-11-24 14:14:59" id="initial-id_date_created">
+
+
+
+
+  </p>
+  <input type="hidden" name="csrfmiddlewaretoken" value="wYhozydflJSTwLdG6QFo9vvX3ZBDhf66CwtdcyxkblLvoVGkRRSl2ssAPzI3Znab">
+    <button class="text-white hover:shadow-md text-xl rounded bg-green-500 px-4 py-2 mt-8 " type="submit">Submit</button>
+        <br><hr>
+     <input type="hidden" name="csrfmiddlewaretoken" value="5BvZKC8Ibp1uqjJl34Eg6Yy5krCBGdihZnO1UoTyjDWoX6kXdnBXle6s8Oh7Q65r">
+     {% csrf_token %}
+  </form>
+
+
+
+</div>
+</body>
+{% endblock %}
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

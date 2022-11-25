@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td{
+        border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load static %} {% block header %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all_task</title>
+</head>
+{% endblock %} {% block content %}
+<body>
+
+<div align="center">
+<a class="font-bold text-white-500 text-xl sm:text-3xl"
+      >List of Completed Tasks</a>
+<br>
+<br>
+{%if form%}
+<table border="10" align="center" bgcolor  = "color_name|hex_number|rgb_number" >
+    <thead>
+    <th class="font-bold text-white-500 text-xl sm:text-2xl">Id  </th>
+    <th class="font-bold text-white-500 text-xl sm:text-2xl">Title</th>
+<!--    <th>Descreptions</th>-->
+    <th class="font-bold text-white-500 text-xl sm:text-2xl">Status</th>
+    <th class="font-bold text-white-500 text-xl sm:text-2xl">ACTION</th>
+    </thead>
+    {%for emp in form%}
+    <tr>
+        <td class="font-bold text-white-500 text-xl sm:text-0.5xl">{{emp.id}}</td>
+        <td>{{emp.title}}</td>
+        <td class="font-bold text-blue-500 text-xl sm:text-1xl">{{emp.status}}</td>
+<!--        <td><a href="UpdateData/{{emp.id}}" class="text-white hover:shadow-md text-xl rounded bg-green-400 px-0.9 py-0.9 mt-8">update</a>   <a href="delete/{{emp.id}}" class="text-white hover:shadow-md text-xl rounded bg-green-400 px-0.9 py-0.1 mt-8"> delate</a> </td>-->
+    <td><a href="admin/app1/todomdel/{{emp.id}}/change/" class="text-white hover:shadow-md text-xl rounded bg-green-400 px-0.9 py-0.9 mt-8">Update</a></td>
+    </tr>
+    {%endfor%}
+</table><br><br>
+ <a  href="/add_task/" class="text-white hover:shadow-md text-xl rounded bg-green-500 px-4 py-2 mt-8 ">INSERT new Task</a>
+
+{%else%}
+<h1>no data founds</h1>
+{%endif%}
+
+    </div>
+
+</body>
+{% endblock %}
+</html>
+</body>
+</html>
